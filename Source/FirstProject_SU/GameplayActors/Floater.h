@@ -15,8 +15,17 @@ public:
 	// Sets default values for this actor's properties
 	AFloater();
 
-	UPROPERTY(VisibleAnywhere,Category ="Aura_StaticMesh")
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category ="Aura_StaticMesh")
 	UStaticMeshComponent* StaticMesh;
+
+	UPROPERTY(EditInstanceOnly,BlueprintReadWrite,Category = "Aura_FloaterVariables")
+	FVector InitialLocation;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Aura_FloaterVariables")
+	FVector InitialDirection;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Aura_FloaterVariables")
+	bool bShouldFloat;
 
 protected:
 	// Called when the game starts or when spawned
